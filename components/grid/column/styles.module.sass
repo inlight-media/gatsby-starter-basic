@@ -1,0 +1,49 @@
+@import 'global'
+
+// Utils
+@function percentage($n)
+  @return $n * 100%
+
+@mixin make-grid($class)
+  // Widths
+  @for $index from $layout-columns through 0
+    @if $index > 0
+      .#{$class}-#{$index}
+        flex-basis: percentage(($index / $layout-columns))
+        width: percentage(($index / $layout-columns))
+        max-width: percentage(($index / $layout-columns))
+
+  // Offsets
+  @for $index from $layout-columns through 0
+    .#{$class}-offset-#{$index}
+      margin-left: percentage(($index / $layout-columns))
+
+  // Auto-size by default
+  .#{$class}-auto
+    flex-basis: 0
+    flex-grow: 1
+    width: 100%
+
+.column
+  box-sizing: border-box
+  flex: 0 0 auto
+  padding-left: ($layout-gutter / 2)
+  padding-right: ($layout-gutter / 2)
+
+.columnNoPadding
+  box-sizing: border-box
+  flex: 0 0 auto
+
+@include make-grid(base)
+
+@include below($screen-large)
+  @include make-grid(large)
+
+@include below($screen-medium)
+  @include make-grid(medium)
+
+@include below($screen-small)
+  @include make-grid(small)
+
+@include below($screen-extraSmall)
+  @include make-grid(extraSmall)
