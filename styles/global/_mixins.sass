@@ -1,0 +1,25 @@
+@mixin above($value)
+  @media (min-width: $value + 1)
+    @content
+
+@mixin between($min, $max)
+  @media (min-width: $min) and (max-width: $max)
+    @content
+
+@mixin below($value)
+  @media (max-width: $value)
+    @content
+
+// for a landscape device below the value width
+@mixin landscape($value)
+  @media (max-width: $value) and (orientation: landscape)
+    @content
+
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return $remSize * 1rem
+
+
+@mixin font-size($size)
+  font-size: $size
+  font-size: calculateRem($size)
