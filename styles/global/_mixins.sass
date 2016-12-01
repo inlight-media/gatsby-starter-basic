@@ -1,3 +1,6 @@
+// sass-lint:disable no-duplicate-properties
+// sass-lint:disable indentation
+
 @mixin above($value)
   @media (min-width: $value + 1)
     @content
@@ -15,11 +18,11 @@
   @media (max-width: $value) and (orientation: landscape)
     @content
 
-@function calculateRem($size)
-  $remSize: $size / 16px
-  @return $remSize * 1rem
+@function calculate-rem($size)
+  $rem-size: $size / 16px
+  @return $rem-size * 1rem
 
 
 @mixin font-size($size)
   font-size: $size
-  font-size: calculateRem($size)
+  font-size: calculate-rem($size)
