@@ -1,22 +1,21 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React, { Component, PropTypes } from 'react';
+import Helmet from 'react-helmet';
 
-import { prefixLink } from 'gatsby-helpers'
+import { prefixLink } from 'gatsby-helpers';
 
-const BUILD_TIME = new Date().getTime()
+const BUILD_TIME = new Date().getTime();
 
-module.exports = React.createClass({
-  propTypes () {
-    return {
-      body: React.PropTypes.string,
-    }
-  },
-  render () {
-    const head = Helmet.rewind()
+export default class Html extends Component {
+  static propTypes = {
+    body: PropTypes.string,
+  };
 
-    let css
+  render() {
+    const head = Helmet.rewind();
+
+    let css;
     if (process.env.NODE_ENV === 'production') {
-      css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
+      css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />; // eslint-disable-line
     }
 
     return (
@@ -37,6 +36,6 @@ module.exports = React.createClass({
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
         </body>
       </html>
-    )
-  },
-})
+    );
+  }
+}

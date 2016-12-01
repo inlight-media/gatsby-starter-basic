@@ -9,7 +9,6 @@ export default class Column extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    background: PropTypes.string,
     noPadding: PropTypes.bool,
 
     // Sizes
@@ -26,36 +25,36 @@ export default class Column extends Component {
     mediumOffset: PropTypes.number,
     largeOffset: PropTypes.number,
 
+    // Custom prop validation
     requireColumnProp: ({ extraSmall, small, medium, large, base }, propName, componentName) => {
       const noColumnNumberProvided = (!extraSmall && !small && !medium && !large && !base);
-      return noColumnNumberProvided ? new Error(`No column prop provided for any break point on ${componentName}. Component may not be needed.`) : null;
+      return noColumnNumberProvided ? new Error(`No column prop provided for any break point on ${componentName}. Component may not be needed.`) : undefined;
     },
   };
 
   render() {
-    const { props } = this;
     const className = classNames(
-      props.noPadding ? styles.columnNoPadding : styles.column,
+      this.props.noPadding ? styles.columnNoPadding : styles.column,
 
       // Sizes
-      props.extraSmall === true ? styles['extraSmall-auto'] : styles[`extraSmall-${props.extraSmall}`],
-      props.small === true ? styles['small-auto'] : styles[`small-${props.small}`],
-      props.medium === true ? styles['medium-auto'] : styles[`medium-${props.medium}`],
-      props.large === true ? styles['large-auto'] : styles[`large-${props.large}`],
-      props.base === true ? styles['base-auto'] : styles[`base-${props.base}`],
+      this.props.extraSmall === true ? styles['extraSmall-auto'] : styles[`extraSmall-${this.props.extraSmall}`],
+      this.props.small === true ? styles['small-auto'] : styles[`small-${this.props.small}`],
+      this.props.medium === true ? styles['medium-auto'] : styles[`medium-${this.props.medium}`],
+      this.props.large === true ? styles['large-auto'] : styles[`large-${this.props.large}`],
+      this.props.base === true ? styles['base-auto'] : styles[`base-${this.props.base}`],
 
       // Offsets
-      styles[`extraSmall-offset-${props.extraSmallOffset}`],
-      styles[`small-offset-${props.smallOffset}`],
-      styles[`medium-offset-${props.mediumOffset}`],
-      styles[`large-offset-${props.largeOffset}`],
-      styles[`base-offset-${props.baseOffset}`],
+      styles[`extraSmall-offset-${this.props.extraSmallOffset}`],
+      styles[`small-offset-${this.props.smallOffset}`],
+      styles[`medium-offset-${this.props.mediumOffset}`],
+      styles[`large-offset-${this.props.largeOffset}`],
+      styles[`base-offset-${this.props.baseOffset}`],
 
-      props.className,
+      this.props.className,
     );
 
     return (
-      <div className={className}>{props.children}</div>
+      <div className={className}>{this.props.children}</div>
     );
   }
 }

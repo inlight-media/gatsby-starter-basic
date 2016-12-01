@@ -1,11 +1,11 @@
-var path = require('path');
+const path = require('path');
 
-exports.modifyWebpackConfig = function(config, stage) {
+exports.modifyWebpackConfig = function modifyWebpackConfig(config) {
   config.merge({
     sassLoader: {
       includePaths: [path.resolve(__dirname, './styles')],
-    }
+    },
   });
-  
+
   return config;
 };
