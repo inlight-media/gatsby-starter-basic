@@ -1,18 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router'
-import { prefixLink } from 'gatsby-helpers'
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+import { prefixLink } from 'gatsby-helpers';
 
 import { Wrapper } from '../components/grid';
 
 import '../styles/base';
 
-module.exports = React.createClass({
-  propTypes () {
-    return {
-      children: React.PropTypes.any,
-    }
-  },
-  render () {
+export default class Template extends Component {
+  static propTypes = {
+    children: PropTypes.any,
+  };
+
+  render() {
     return (
       <div>
         <Wrapper>
@@ -22,6 +21,6 @@ module.exports = React.createClass({
           {this.props.children}
         </Wrapper>
       </div>
-    )
-  },
-})
+    );
+  }
+}

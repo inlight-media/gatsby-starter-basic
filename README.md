@@ -3,7 +3,10 @@ This is a starter package for use with [gatsby](https://github.com/gatsbyjs/gats
 
 ## What's in the box?
 This, being our basic starter, comes with a pretty minimal feature set:
- - SASS (with linting)
+ - Basic styling setup using sass: globals (variables and mixins) and base (reset and base styles) defined
+ - EditorConfig - http://editorconfig.org/
+ - Linting (both js and sass) running on git pre-commit hook
+ - Some _very_ basic example pages
 
 As well as all the goodness (loaders) that comes with gatsby by default.
 

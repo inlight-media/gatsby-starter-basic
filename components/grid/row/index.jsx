@@ -17,7 +17,7 @@ export default class Row extends Component {
       styles.row,
       styles[this.props.horizontalAlign],
       styles[this.props.verticalAlign],
-      this.props.className
+      this.props.className,
     );
     return (
       <div className={className} style={this.props.style}>
