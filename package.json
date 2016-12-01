@@ -24,7 +24,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint  --ignore-pattern 'public' --ext .js,.jsx .",
-    "lint:sass": "./node_modules/.bin/sass-lint -v",
+    "lint:sass": "sass-lint -v",
     "lint:staged": "LIST=`git diff --cached --name-only | grep '^.*\\.jsx*$'`; if [ \"$LIST\" ]; then eslint $LIST; fi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

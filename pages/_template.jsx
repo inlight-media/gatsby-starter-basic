@@ -15,9 +15,8 @@ export default class Template extends Component {
     return (
       <div>
         <Wrapper>
-          <Link to={prefixLink('/')}>
-            Inlight Gatsby Starter
-          </Link>
+          <Link to={prefixLink('/')}>Inlight Gatsby Starter</Link>
+          <hr />
           {this.props.children}
         </Wrapper>
       </div>
