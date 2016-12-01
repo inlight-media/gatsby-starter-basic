@@ -16,14 +16,8 @@ module.exports = React.createClass({
     return (
       <div>
         <Wrapper>
-          <Link
-            to={prefixLink('/')}
-            style={{
-              color: 'black',
-              textDecoration: 'none',
-            }}
-          >
-            Gatsby!!!
+          <Link to={prefixLink('/')}>
+            Inlight Gatsby Starter
           </Link>
           {this.props.children}
         </Wrapper>
