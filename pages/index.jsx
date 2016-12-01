@@ -20,13 +20,13 @@ export default class Index extends Component {
         <Wrapper>
           <Row>
             <Column base={10}>
-          <Helmet
-            title={config.siteTitle}
-            meta={[
-              { name: 'description', content: 'Time to get started!' },
-              { name: 'keywords', content: 'gastby, static website, react, sass, inlight' },
-            ]}
-          />
+              <Helmet
+                title={config.siteTitle}
+                meta={[
+                  { name: 'description', content: 'Time to get started!' },
+                  { name: 'keywords', content: 'gastby, static website, react, sass, inlight' },
+                ]}
+              />
               <ContentBlock>
                 <h1>Time to start building your website!</h1>
                 <p>Before you get started there are some handy things to know developing in this environment:</p>

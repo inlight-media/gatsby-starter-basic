@@ -12,7 +12,7 @@ export default class ContentBlock extends Component {
 
     return (
       <div className={styles.contentBlock}>
-        {this.props.children}
+        {children}
       </div>
     );
   }
