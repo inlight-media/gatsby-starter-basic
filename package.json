@@ -8,12 +8,15 @@
     "gatsby": "^0.12.20",
     "react-helmet": "^3.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sass-lint": "^1.10.2"
+  },
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "sasslint": "./node_modules/.bin/sass-lint -v",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
